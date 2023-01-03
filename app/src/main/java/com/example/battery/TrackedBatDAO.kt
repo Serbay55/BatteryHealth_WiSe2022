@@ -16,6 +16,9 @@ interface TrackedBatDAO {
     @Query("SELECT * FROM tracked_charges WHERE date_of_occurrence LIKE :roll LIMIT 1")
     suspend fun findByRoll(roll: Int): Tracked
 
+    @Query("SELECT * FROM tracked_charges WHERE charge_up LIKE :chup LIMIT 100")
+    suspend fun findByChargeUp(chup: Int): Tracked
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(tracked: Tracked)
 

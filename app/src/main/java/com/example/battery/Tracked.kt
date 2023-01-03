@@ -9,5 +9,9 @@ data class Tracked(
     @PrimaryKey(autoGenerate = true) val id: Int?,
     @ColumnInfo(name = "charge_up") val chargeUp: Int?,
     @ColumnInfo(name = "charge_down") val chargeDown: Int?,
-    @ColumnInfo(name = "date_of_occurrence") val date: Int?,
+    @ColumnInfo(name = "date_of_occurrence") val date: Long,
+
+
 )
+
+
